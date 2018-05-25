@@ -1,0 +1,8 @@
+D:\Workspace\OpExile\bin\Debug\netcoreapp2.0\OpExile.deps.json
+D:\Workspace\OpExile\bin\Debug\netcoreapp2.0\OpExile.runtimeconfig.json
+D:\Workspace\OpExile\bin\Debug\netcoreapp2.0\OpExile.runtimeconfig.dev.json
+D:\Workspace\OpExile\bin\Debug\netcoreapp2.0\OpExile.dll
+D:\Workspace\OpExile\bin\Debug\netcoreapp2.0\OpExile.pdb
+D:\Workspace\OpExile\obj\Debug\netcoreapp2.0\OpExile.fsprojAssemblyReference.cache
+D:\Workspace\OpExile\obj\Debug\netcoreapp2.0\OpExile.dll
+D:\Workspace\OpExile\obj\Debug\netcoreapp2.0\OpExile.pdb
