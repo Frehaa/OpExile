@@ -1,5 +1,9 @@
+﻿module Parser.Main
+
 open System.Net
 open System
+open Newtonsoft.Json
+open System.Collections.Generic
 
 let loadContent (address: String) =
     use client = new WebClient()   
@@ -11,7 +15,9 @@ let capture (captureStart: String) (content: String) =
     content.Substring(startIdx, endIdx - startIdx)
 
 let captureTreeData = capture @"var passiveSkillTreeData = "
-let captureOptions = capture @"var opts = "   
+let captureOptions content = 
+    let json = capture @"var opts = " content
+    json.Replace("passiveSkillTreeData: passiveSkillTreeData,", "")    
 
 [<EntryPoint>]
 let main args = 
@@ -19,8 +25,17 @@ let main args =
 
     let content = loadContent path
     
-    captureOptions content
-    |> printfn "%s"
+    //let options =
+    //    captureOptions content 
+    //    |> Parser.OptionsExtractor.jsonToOptions 
+    
+    //printfn "%A" options.ascClasses.[Names.Marauder].classes
+
+    let tree = 
+        captureTreeData content
+        |> SkillTreeExtractor.jsonToTreeData
+
+    printfn "%A" tree.characterData.["0"].base_dex
 
     0
 
