@@ -10,3 +10,6 @@ type OptionsJson = { ascClasses: Dictionary<string, ClassJson>; version: string 
 
 let jsonToOptions json = 
     JsonConvert.DeserializeObject<OptionsJson>(json)
+
+let printVersion options = 
+    printfn "Version: %s" options.version
